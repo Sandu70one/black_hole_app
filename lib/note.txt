@@ -1,0 +1,67 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: "First App test",
+      home: SafeArea(
+        child: Scaffold(
+          backgroundColor: Colors.black,
+          appBar: AppBar(
+              //do not touch the notification bar
+              title: const Text(
+                "First App",
+                style: TextStyle(color: Colors.white),
+              ),
+              backgroundColor: const Color.fromARGB(255, 52, 1, 106)),
+          body: Column(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Container(
+                  height: 100,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 121, 121, 121),
+                      borderRadius: BorderRadius.circular(20)),
+                ),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Container(
+                      height: 150,
+                      width: 150,
+                      child: const Center(child: Text("Hello",style: TextStyle(color: Colors.white),) ),
+                      decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 121, 121, 121),
+                          borderRadius: BorderRadius.circular(20)),
+                    ),
+                    Container(
+                      height: 150,
+                      width: 150,
+                      decoration: BoxDecoration(
+                          color: const Color.fromARGB(255, 121, 121, 121),
+                          borderRadius: BorderRadius.circular(20)),
+                    ),
+                  ],
+                ),
+                Container(
+                  height: 200,
+                  width: double.infinity,
+                  decoration: BoxDecoration(
+                      color: const Color.fromARGB(255, 121, 121, 121),
+                      borderRadius: BorderRadius.circular(20)),
+                ),
+              ]),
+        ),
+      ),
+    );
+  }
+}
